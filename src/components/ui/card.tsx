@@ -26,8 +26,8 @@ export function FeatureCard({
   children: ReactNode;
 }) {
   return (
-    <Card className="h-full hover:border-leaf/60">
-      <div className="mb-5 flex size-11 items-center justify-center rounded-xl bg-leaf-deep/60 text-leaf-bright">
+    <Card className="h-full hover:border-gold/50">
+      <div className="mb-5 flex size-11 items-center justify-center rounded-lg border border-gold/25 bg-gold/10 text-gold">
         {icon}
       </div>
       <h3 className="text-xl">{title}</h3>

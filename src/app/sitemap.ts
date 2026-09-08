@@ -3,7 +3,9 @@ import { site } from "@/lib/site";
 
 const routes = [
   { path: "/", priority: 1 },
+  { path: "/specials", priority: 0.95 },
   { path: "/club", priority: 0.9 },
+  { path: "/lounge", priority: 0.8 },
   { path: "/store", priority: 0.9 },
   { path: "/about", priority: 0.7 },
   { path: "/visit", priority: 0.8 },

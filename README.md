@@ -3,10 +3,15 @@
 Website for Canna & Co, a private cannabis members' club and boutique store in
 Moreleta Park, Pretoria.
 
-It's an information site: it tells people who we are, how the club works, what
-the store is for, and how to find us. There is no product catalogue, no cart and
-no checkout — enquiries go out by email or WhatsApp from the visitor's own
-device.
+It's an information site: who we are, the weekly specials, how the club works,
+what the lounge is for, and how to find us. There is no product catalogue, no
+cart and no checkout — enquiries go out by email or WhatsApp from the visitor's
+own device.
+
+The design follows the brand's printed poster artwork: near-black with a warm
+green cast, aged gold (`#c08838`) as the only real accent, printed cream for
+text, engraved caps (Cinzel) over a brushed script (Yellowtail) for the
+day-name lockups.
 
 ## Stack
 
@@ -44,6 +49,16 @@ page, sitemap and the Schema.org record Google reads:
 - `socials` — real profile URLs, or delete the entries
 - `url` — the live domain, used for canonical URLs and the sitemap
 
+**`minimumAge` is set to 19**, because every poster reads "19+ ONLY". South
+Africa's age of majority is 18, so if the door policy is actually 18, change
+that one number — the age gate, footer, FAQ, legal page and club rules all read
+from it.
+
+The weekly specials in **`src/lib/specials.ts`** were transcribed from the
+poster artwork (Moon Monday, Twisted Tuesday, Family Fridays, Sunday Buffet).
+Deals move — when the posters change, that file needs changing too. It is the
+only place the specials are written down.
+
 Also worth doing before launch:
 
 1. **Have someone review `src/app/legal/page.tsx`.** It's written to be honest
@@ -54,11 +69,15 @@ Also worth doing before launch:
    (parking, accessibility, sign-up taking ten minutes). Correct anything that
    isn't true.
 3. **Add real photography.** The design is currently typographic — no photos of
-   the space or the team. Dropping a few real images into the hero and the
-   About page would lift it considerably.
+   the space, the team or the product line-ups. The poster artwork would work
+   well on the Specials page, and photos of the lounge would carry that page.
 4. **Add a favicon and OG image.** `src/app/favicon.ico` is still the Next.js
    default, and there's no Open Graph image yet, so link previews will be
-   text-only.
+   text-only. One of the posters would make a good OG image.
+5. **Confirm the game-night details.** The Lounge page describes D&D nights from
+   the poster (D&D Beyond, a level 8 character, bring dice) but deliberately
+   gives no date or time — the poster's "17:37" looked like a placeholder. If
+   sessions run to a fixed schedule, say so on that page.
 
 ## Structure
 
@@ -67,8 +86,10 @@ src/
   app/
     layout.tsx        root layout: fonts, metadata, age gate, header/footer
     page.tsx          home
+    specials/         the four weekly specials
     club/             the members' club
     store/            the store
+    lounge/           the Moreleta Lounge + game nights
     about/            who we are
     visit/            address, hours, directions, map
     faq/              full FAQ (also emits FAQ structured data)
@@ -83,9 +104,10 @@ src/
     site-footer.tsx
     contact-form.tsx  composes a mailto:/WhatsApp message; sends nothing itself
     page-hero.tsx     shared inner-page hero
-    ui/               buttons, cards, sections, icons
+    ui/               buttons, cards, sections, icons, poster-title
   lib/
     site.ts           ⚠️ all business details live here
+    specials.ts       ⚠️ the weekly deals, transcribed from the posters
     faqs.ts           FAQ content
 ```
 

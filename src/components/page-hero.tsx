@@ -17,7 +17,7 @@ export function PageHero({
     <section className="relative overflow-hidden border-b border-line/60">
       <div
         aria-hidden
-        className="absolute -top-52 left-1/2 size-[36rem] -translate-x-1/2 rounded-full bg-leaf-deep/25 blur-[120px]"
+        className="absolute -top-52 left-1/2 size-[36rem] -translate-x-1/2 rounded-full bg-gold-deep/12 blur-[120px]"
       />
       <Container className="relative">
         <div className="max-w-3xl py-20 sm:py-28">

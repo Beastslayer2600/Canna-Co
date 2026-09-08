@@ -8,7 +8,7 @@
 export type Faq = {
   question: string;
   answer: string;
-  category: "Visiting" | "Membership" | "In store" | "Practical";
+  category: "Visiting" | "Specials" | "Membership" | "In store" | "Practical";
 };
 
 export const faqs: Faq[] = [
@@ -28,7 +28,37 @@ export const faqs: Faq[] = [
     category: "Visiting",
     question: "How old do I have to be?",
     answer:
-      "Eighteen or older, without exception. We ask for ID, and we'd rather ask someone who looks obviously old enough than let someone underage slip through.",
+      "Nineteen or older, without exception. We ask for ID, and we'd rather ask someone who looks obviously old enough than let someone underage slip through.",
+  },
+  {
+    category: "Specials",
+    question: "What are the weekly specials?",
+    answer:
+      "Moon Monday takes money off the Moon Settler pre-rolls. Twisted Tuesday covers Greenhouse, Double Barrels and infused rolls. Family Fridays discounts the whole homebrand pre-roll line. Sunday is the Edible Bar buffet. The Specials page has the detail.",
+  },
+  {
+    category: "Specials",
+    question: "Do the specials ever sell out?",
+    answer:
+      "Sometimes, yes — stock is limited and the popular strains go first. If you're driving out for something specific, message us on the day and we'll check before you leave.",
+  },
+  {
+    category: "Specials",
+    question: "How does the Sunday Buffet work?",
+    answer:
+      "Single gummies at 10mg, 22mg, 44mg and 50mg are take 2 get 1 free — the 50mg deal excludes nougat and rainbow belts. The 150mg singles are 16% less, Ding packs are 13% less at 100mg and 8% less at 200mg, and cookies are 20% off.",
+  },
+  {
+    category: "In store",
+    question: "What's the Edible Bar?",
+    answer:
+      "A wall of gummies, jellies and cookies you can pick from by strength rather than by guesswork. If you're not sure where to start, tell us and we'll point you at something sensible.",
+  },
+  {
+    category: "Visiting",
+    question: "What happens at game night?",
+    answer:
+      "We run a Dungeons & Dragons table in the lounge for members — beginners and experienced players both welcome. Bring a level 8 character on the D&D Beyond app, and dice if you have them. Dates get announced in store and on our socials.",
   },
   {
     category: "Membership",

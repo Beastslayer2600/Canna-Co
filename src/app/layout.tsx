@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
-import { Fraunces, Inter } from "next/font/google";
+import { Cinzel, Inter, Yellowtail } from "next/font/google";
 import { AgeGate } from "@/components/age-gate";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -13,11 +13,20 @@ const body = Inter({
   display: "swap",
 });
 
-const display = Fraunces({
+// Cinzel stands in for the engraved Roman caps on the poster wordmark;
+// Yellowtail for the brushed day names ("Tuesday!", "Buffet").
+const display = Cinzel({
   variable: "--font-display",
   subsets: ["latin"],
   display: "swap",
-  axes: ["SOFT", "WONK", "opsz"],
+  weight: ["400", "600", "700"],
+});
+
+const script = Yellowtail({
+  variable: "--font-script",
+  subsets: ["latin"],
+  display: "swap",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -52,7 +61,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a1310",
+  themeColor: "#050a06",
   colorScheme: "dark",
 };
 
@@ -87,7 +96,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en-ZA"
-      className={`${body.variable} ${display.variable} h-full`}
+      className={`${body.variable} ${display.variable} ${script.variable} h-full`}
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col">
@@ -100,7 +109,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-full focus:bg-leaf focus:px-5 focus:py-2 focus:text-sm focus:font-semibold focus:text-ink"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-full focus:bg-gold focus:px-5 focus:py-2 focus:text-sm focus:font-semibold focus:text-ink"
         >
           Skip to content
         </a>

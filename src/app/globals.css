@@ -1,29 +1,33 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand palette — deep botanical greens, warm cream, aged gold */
-  --color-ink: #0a1310;
-  --color-ink-soft: #0f1c16;
-  --color-surface: #142219;
-  --color-surface-2: #1b2d22;
-  --color-line: #2a4034;
+  /* Palette sampled from the Canna & Co poster artwork: near-black with a warm
+     green cast, aged gold as the only real accent, and a soft printed cream. */
+  --color-ink: #050a06;
+  --color-ink-soft: #0a130b;
+  --color-surface: #0d1c0f;
+  --color-surface-2: #132714;
+  --color-line: #24361f;
+  --color-line-gold: #c0883833;
 
-  --color-cream: #f5f2e9;
-  --color-cream-dim: #c9c6ba;
-  --color-muted: #8f9b92;
+  --color-cream: #ede4d2;
+  --color-cream-dim: #b9b1a1;
+  --color-muted: #857f72;
+
+  --color-gold: #c08838;
+  --color-gold-bright: #d9a94e;
+  --color-gold-pale: #e8d8b0;
+  --color-gold-deep: #8a5f22;
 
   --color-leaf: #4e9c60;
-  --color-leaf-bright: #6dc17f;
-  --color-leaf-deep: #23543a;
-
-  --color-gold: #c9a24a;
-  --color-gold-soft: #e0c079;
+  --color-ember: #9e2b2b;
 
   --font-sans: var(--font-body), ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-display: var(--font-display), Georgia, "Times New Roman", serif;
+  --font-display: var(--font-display), "Times New Roman", Georgia, serif;
+  --font-script: var(--font-script), "Segoe Script", cursive;
 
-  --radius-card: 1.25rem;
+  --radius-card: 0.75rem;
 
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 
@@ -52,39 +56,72 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  /* Cinzel is an inscriptional face — it wants tracking, not tight letterfit. */
   h1,
   h2,
   h3 {
     font-family: var(--font-display);
     font-weight: 600;
-    letter-spacing: -0.015em;
+    letter-spacing: 0.01em;
   }
 
   ::selection {
-    background: var(--color-leaf);
+    background: var(--color-gold);
     color: var(--color-ink);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-gold);
+    outline: 2px solid var(--color-gold-bright);
     outline-offset: 3px;
     border-radius: 4px;
   }
 }
 
 @layer utilities {
-  /* Faint botanical grid used behind hero + section breaks */
+  /* The brushed gold used for headline words on the posters. */
+  .text-foil {
+    background-image: linear-gradient(
+      170deg,
+      #e8d8b0 0%,
+      #c08838 32%,
+      #8a5f22 52%,
+      #d9a94e 72%,
+      #e8d8b0 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Thin double rule + corner ticks, echoing the poster frames. */
+  .frame-gold {
+    position: relative;
+    border: 1px solid var(--color-line-gold);
+  }
+
+  .frame-gold::after {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border: 1px solid color-mix(in srgb, var(--color-gold) 14%, transparent);
+    pointer-events: none;
+  }
+
   .bg-grain {
     background-image: radial-gradient(
-        circle at 1px 1px,
-        rgba(245, 242, 233, 0.06) 1px,
-        transparent 0
-      );
+      circle at 1px 1px,
+      rgba(237, 228, 210, 0.05) 1px,
+      transparent 0
+    );
     background-size: 22px 22px;
   }
 
   .text-balance-tight {
     text-wrap: balance;
+  }
+
+  .tracking-poster {
+    letter-spacing: 0.18em;
   }
 }
 

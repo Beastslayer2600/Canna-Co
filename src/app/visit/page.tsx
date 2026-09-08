@@ -60,7 +60,7 @@ export default function VisitPage() {
           <div>
             <dl className="space-y-10">
               <div className="flex gap-4">
-                <PinIcon className="mt-1 size-5 shrink-0 text-leaf" />
+                <PinIcon className="mt-1 size-5 shrink-0 text-gold" />
                 <div>
                   <dt className="text-xs tracking-[0.18em] text-muted uppercase">
                     Address
@@ -77,7 +77,7 @@ export default function VisitPage() {
               </div>
 
               <div className="flex gap-4">
-                <ClockIcon className="mt-1 size-5 shrink-0 text-leaf" />
+                <ClockIcon className="mt-1 size-5 shrink-0 text-gold" />
                 <div className="w-full">
                   <dt className="text-xs tracking-[0.18em] text-muted uppercase">
                     Opening hours
@@ -99,7 +99,7 @@ export default function VisitPage() {
               </div>
 
               <div className="flex gap-4">
-                <PhoneIcon className="mt-1 size-5 shrink-0 text-leaf" />
+                <PhoneIcon className="mt-1 size-5 shrink-0 text-gold" />
                 <div>
                   <dt className="text-xs tracking-[0.18em] text-muted uppercase">
                     Phone
@@ -107,7 +107,7 @@ export default function VisitPage() {
                   <dd className="mt-2 text-lg text-cream">
                     <a
                       href={site.contact.phoneHref}
-                      className="hover:text-leaf-bright"
+                      className="hover:text-gold-bright"
                     >
                       {site.contact.phone}
                     </a>

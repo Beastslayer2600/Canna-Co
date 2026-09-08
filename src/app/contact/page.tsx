@@ -78,9 +78,9 @@ export default function ContactPage() {
                     {...(method.external
                       ? { target: "_blank", rel: "noopener noreferrer" }
                       : {})}
-                    className="rounded-card flex items-start gap-4 border border-line bg-surface/50 p-5 transition-colors hover:border-leaf/60 hover:bg-surface-2/60"
+                    className="rounded-card flex items-start gap-4 border border-line bg-surface/50 p-5 transition-colors hover:border-gold/50 hover:bg-surface-2/60"
                   >
-                    <span className="mt-0.5 text-leaf">{method.icon}</span>
+                    <span className="mt-0.5 text-gold">{method.icon}</span>
                     <span>
                       <span className="block text-xs tracking-[0.18em] text-muted uppercase">
                         {method.label}
@@ -96,7 +96,7 @@ export default function ContactPage() {
 
             <div className="rounded-card mt-6 border border-line bg-surface/50 p-5">
               <div className="flex items-center gap-3">
-                <ClockIcon className="size-5 text-leaf" />
+                <ClockIcon className="size-5 text-gold" />
                 <h3 className="text-xs tracking-[0.18em] text-muted uppercase">
                   When we&rsquo;re open
                 </h3>

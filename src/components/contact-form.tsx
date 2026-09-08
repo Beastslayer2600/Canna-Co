@@ -13,7 +13,7 @@ const topics = [
 ] as const;
 
 const fieldClasses =
-  "w-full rounded-xl border border-line bg-ink/60 px-4 py-3 text-sm text-cream placeholder:text-muted focus:border-leaf focus:outline-none";
+  "w-full rounded-xl border border-line bg-ink/60 px-4 py-3 text-sm text-cream placeholder:text-muted focus:border-gold focus:outline-none";
 
 /**
  * There is no backend on this site, so the form composes the enquiry and hands
@@ -105,7 +105,7 @@ export function ContactForm() {
           href={whatsappLink(composed)}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 rounded-full border border-line bg-surface/60 px-6 py-3 text-sm font-semibold tracking-wide text-cream transition-colors hover:border-leaf hover:bg-surface-2 sm:flex-1"
+          className="inline-flex items-center justify-center gap-2 rounded-full border border-line bg-surface/60 px-6 py-3 text-sm font-semibold tracking-wide text-cream transition-colors hover:border-gold hover:bg-surface-2 sm:flex-1"
         >
           Send on WhatsApp
         </a>

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Logo } from "./logo";
 import { Container } from "./ui/container";
-import { nav } from "@/lib/site";
+import { nav, site } from "@/lib/site";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -44,9 +44,9 @@ export function SiteHeader() {
     >
       <Container>
         <div className="flex h-20 items-center justify-between gap-6">
-          <Logo />
+          <Logo strap={site.strap} className="items-start" />
 
-          <nav aria-label="Main" className="hidden items-center gap-1 lg:flex">
+          <nav aria-label="Main" className="hidden items-center gap-1 xl:flex">
             {nav.map((item) => {
               const active =
                 item.href === "/"
@@ -57,7 +57,7 @@ export function SiteHeader() {
                   key={item.href}
                   href={item.href}
                   aria-current={active ? "page" : undefined}
-                  className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                  className={`rounded-full px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors ${
                     active
                       ? "bg-surface-2 text-cream"
                       : "text-cream-dim hover:text-cream"
@@ -72,7 +72,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-3">
             <Link
               href="/contact"
-              className="hidden rounded-full bg-leaf px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-leaf-bright sm:inline-flex"
+              className="hidden rounded-full bg-gold px-5 py-2.5 text-sm font-semibold whitespace-nowrap text-ink transition-colors hover:bg-gold-bright sm:inline-flex"
             >
               Get in touch
             </Link>
@@ -83,7 +83,7 @@ export function SiteHeader() {
               aria-expanded={open}
               aria-controls="mobile-nav"
               aria-label={open ? "Close menu" : "Open menu"}
-              className="flex size-11 items-center justify-center rounded-full border border-line text-cream lg:hidden"
+              className="flex size-11 items-center justify-center rounded-full border border-line text-cream xl:hidden"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -112,7 +112,7 @@ export function SiteHeader() {
       </Container>
 
       {open ? (
-        <div id="mobile-nav" className="border-t border-line bg-ink lg:hidden">
+        <div id="mobile-nav" className="border-t border-line bg-ink xl:hidden">
           <Container>
             <nav aria-label="Mobile" className="flex flex-col py-4">
               {nav.map((item) => (
@@ -126,7 +126,7 @@ export function SiteHeader() {
               ))}
               <Link
                 href="/contact"
-                className="mt-5 mb-2 rounded-full bg-leaf px-5 py-3 text-center text-sm font-semibold text-ink"
+                className="mt-5 mb-2 rounded-full bg-gold px-5 py-3 text-center text-sm font-semibold text-ink"
               >
                 Get in touch
               </Link>

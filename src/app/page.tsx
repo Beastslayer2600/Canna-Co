@@ -13,7 +13,9 @@ import {
   SparkIcon,
   UsersIcon,
 } from "@/components/ui/icons";
+import { PosterTitle } from "@/components/ui/poster-title";
 import { faqs } from "@/lib/faqs";
+import { specialsByWeek } from "@/lib/specials";
 import {
   formattedAddress,
   mapsEmbedUrl,
@@ -26,6 +28,7 @@ export default function HomePage() {
     <>
       <Hero />
       <TwoTracks />
+      <SpecialsStrip />
       <WhyUs />
       <ClubSteps />
       <VisitStrip />
@@ -50,59 +53,60 @@ function Hero() {
       />
       <div
         aria-hidden
-        className="absolute -top-40 left-1/2 size-[42rem] -translate-x-1/2 rounded-full bg-leaf-deep/25 blur-[130px]"
+        className="absolute -top-40 left-1/2 size-[42rem] -translate-x-1/2 rounded-full bg-gold-deep/12 blur-[130px]"
       />
 
       <Container className="relative">
         <div className="flex flex-col items-start py-24 sm:py-32 lg:py-40">
           <p className="animate-fade-up inline-flex items-center gap-2 rounded-full border border-line bg-surface/60 px-4 py-2 text-xs font-medium tracking-wide text-cream-dim">
-            <span className="size-1.5 rounded-full bg-leaf-bright" />
-            {site.suburb}, {site.city} &middot; Members {site.minimumAge}+
+            <span className="size-1.5 rounded-full bg-gold-bright" />
+            {site.strap} &middot; {site.suburb}, {site.city} &middot;{" "}
+            {site.minimumAge}+
           </p>
 
           <h1 className="animate-fade-up text-balance-tight mt-7 max-w-3xl text-4xl leading-[1.08] sm:text-5xl lg:text-6xl">
             A private cannabis club and boutique store,{" "}
-            <span className="text-leaf-bright">right here in Moreleta.</span>
+            <span className="text-gold-bright">right here in Moreleta.</span>
           </h1>
 
           <p className="animate-fade-up mt-7 max-w-xl text-lg leading-relaxed text-cream-dim">
             Canna &amp; Co is a calm, well-run space for adults who take this
-            plant seriously. Join the club, browse the store, and get straight
-            answers from people who know what they&rsquo;re talking about.
+            plant seriously. A boutique store, a members&rsquo; club, a lounge —
+            and a deal on most days of the week.
           </p>
 
           <div className="animate-fade-up mt-10 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href="/club">
-              Join the club
+            <ButtonLink href="/specials">
+              See this week&rsquo;s specials
               <ArrowIcon className="size-4" />
             </ButtonLink>
-            <ButtonLink href="/visit" variant="secondary">
-              Visit the store
+            <ButtonLink href="/club" variant="secondary">
+              Join the club
             </ButtonLink>
           </div>
 
           <dl className="animate-fade-up mt-16 grid w-full max-w-2xl grid-cols-2 gap-x-8 gap-y-8 border-t border-line pt-10 sm:grid-cols-3">
             <div>
-              <dt className="text-xs tracking-[0.18em] text-muted uppercase">
-                Members only
+              <dt className="text-xs tracking-poster text-muted uppercase">
+                Quality
               </dt>
-              <dd className="mt-2 font-display text-xl text-cream">
-                Private club
+              <dd className="mt-2 font-display text-lg tracking-[0.04em] text-cream">
+                Premium flower
               </dd>
             </div>
             <div>
-              <dt className="text-xs tracking-[0.18em] text-muted uppercase">
-                Walk in
+              <dt className="text-xs tracking-poster text-muted uppercase">
+                Family
               </dt>
-              <dd className="mt-2 font-display text-xl text-cream">
-                Boutique store
+              <dd className="mt-2 font-display text-lg tracking-[0.04em] text-cream">
+                Expertly crafted
               </dd>
             </div>
             <div>
-              <dt className="text-xs tracking-[0.18em] text-muted uppercase">
-                Always
+              <dt className="text-xs tracking-poster text-muted uppercase">
+                Community
               </dt>
-              <dd className="mt-2 font-display text-xl text-cream">
+              <dd className="mt-2 font-display text-lg tracking-[0.04em] text-cream">
                 {site.minimumAge}+ &amp; discreet
               </dd>
             </div>
@@ -116,63 +120,115 @@ function Hero() {
 function TwoTracks() {
   const tracks = [
     {
+      href: "/store",
+      eyebrow: "The Store",
+      title: "Boutique store",
+      copy: "Walk in and talk to someone. Pre-rolls, flower, the edible bar and gear — and an honest word about what's actually worth your money.",
+      points: ["Open to any adult", "The Edible Bar", "Honest advice"],
+      icon: <SparkIcon className="size-5" />,
+    },
+    {
       href: "/club",
       eyebrow: "The Club",
-      title: "Members' cannabis club",
-      copy: "A private, adults-only club with a proper sign-up process, a members' lounge and a community that looks out for each other.",
-      points: ["Simple, vetted membership", "Members' lounge", "Grower guidance"],
+      title: "Members' club",
+      copy: "A private, adults-only club with a proper sign-up, and a community that looks out for each other.",
+      points: ["Simple, vetted membership", "Grower guidance", "Members' events"],
       icon: <UsersIcon className="size-5" />,
     },
     {
-      href: "/store",
-      eyebrow: "The Store",
-      title: "Boutique store & gear",
-      copy: "Walk in and talk to someone. We stock quality accessories and gear, and we'd rather point you to the right thing than the expensive thing.",
-      points: ["Accessories & glass", "Grow essentials", "Honest advice"],
-      icon: <SparkIcon className="size-5" />,
+      href: "/lounge",
+      eyebrow: "The Lounge",
+      title: "Moreleta Lounge",
+      copy: "The members' room behind the store. Low light, good company, and a table that regularly gets taken over by a game night.",
+      points: ["Somewhere to sit", "D&D game nights", "Beginners welcome"],
+      icon: <LeafIcon className="size-5" />,
     },
   ];
 
   return (
     <Section className="border-t border-line/60">
       <SectionHeading
-        eyebrow="Two ways in"
-        title="One roof, two very different rooms."
-        lead="The club and the store sit side by side. You're welcome to use one, or both."
+        eyebrow="One roof"
+        title="Three rooms, three reasons to come."
+        lead="Use one, use all three. The store is open to any adult; the club and the lounge are for members."
       />
 
-      <div className="mt-14 grid gap-6 md:grid-cols-2">
+      <div className="mt-14 grid gap-6 md:grid-cols-3">
         {tracks.map((track) => (
           <Link
             key={track.href}
             href={track.href}
-            className="group rounded-card border border-line bg-surface/50 p-8 transition-all duration-300 hover:-translate-y-1 hover:border-leaf/60 hover:bg-surface-2/60 sm:p-10"
+            className="group rounded-card frame-gold flex flex-col bg-surface/50 p-8 transition-all duration-300 hover:-translate-y-1 hover:bg-surface-2/60"
           >
-            <div className="flex size-11 items-center justify-center rounded-xl bg-leaf-deep/60 text-leaf-bright">
+            <div className="flex size-11 items-center justify-center rounded-lg border border-gold/25 bg-gold/10 text-gold">
               {track.icon}
             </div>
-            <p className="mt-6 text-xs font-semibold tracking-[0.2em] text-gold uppercase">
+            <p className="mt-6 text-xs font-semibold tracking-poster text-gold uppercase">
               {track.eyebrow}
             </p>
-            <h3 className="mt-3 text-2xl sm:text-3xl">{track.title}</h3>
+            <h3 className="mt-3 text-2xl">{track.title}</h3>
             <p className="mt-4 leading-relaxed text-cream-dim">{track.copy}</p>
 
             <ul className="mt-7 space-y-3">
               {track.points.map((point) => (
                 <li key={point} className="flex items-center gap-3 text-sm">
-                  <CheckIcon className="size-4 shrink-0 text-leaf" />
+                  <CheckIcon className="size-4 shrink-0 text-gold" />
                   <span className="text-cream-dim">{point}</span>
                 </li>
               ))}
             </ul>
 
-            <span className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-leaf-bright">
+            <span className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-gold-bright">
               Read more
               <ArrowIcon className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
             </span>
           </Link>
         ))}
       </div>
+    </Section>
+  );
+}
+
+function SpecialsStrip() {
+  return (
+    <Section className="border-y border-line bg-ink-soft">
+      <SectionHeading
+        eyebrow="Weekly specials"
+        title="There's a deal on most days."
+        lead={`${site.valueLine} Four standing specials — three pre-roll days and the edible bar on a Sunday.`}
+      />
+
+      <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {specialsByWeek.map((special) => (
+          <Link
+            key={special.slug}
+            href={`/specials#${special.slug}`}
+            className="group frame-gold rounded-card flex flex-col bg-surface/50 p-7 transition-colors duration-300 hover:bg-surface-2/60"
+          >
+            <p className="text-xs font-semibold tracking-poster text-gold uppercase">
+              Every {special.day}
+            </p>
+            <PosterTitle
+              lead={special.titleLead}
+              script={special.titleScript}
+              as="h3"
+              className="mt-4 text-2xl"
+            />
+            <p className="mt-5 flex-1 text-sm leading-relaxed text-cream-dim">
+              {special.headline}
+            </p>
+            <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gold-bright">
+              Details
+              <ArrowIcon className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
+            </span>
+          </Link>
+        ))}
+      </div>
+
+      <ButtonLink href="/specials" className="mt-12">
+        All weekly specials
+        <ArrowIcon className="size-4" />
+      </ButtonLink>
     </Section>
   );
 }
@@ -259,7 +315,7 @@ function ClubSteps() {
           {steps.map((step, index) => (
             <li key={step.title}>
               <Card className="flex gap-6">
-                <span className="font-display text-3xl text-leaf/50 tabular-nums">
+                <span className="font-display text-3xl text-gold/45 tabular-nums">
                   0{index + 1}
                 </span>
                 <div>
@@ -289,7 +345,7 @@ function VisitStrip() {
 
           <dl className="mt-10 space-y-8">
             <div className="flex gap-4">
-              <PinIcon className="mt-1 size-5 shrink-0 text-leaf" />
+              <PinIcon className="mt-1 size-5 shrink-0 text-gold" />
               <div>
                 <dt className="text-xs tracking-[0.18em] text-muted uppercase">
                   Address
@@ -301,7 +357,7 @@ function VisitStrip() {
                   href={mapsSearchUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-leaf-bright hover:underline"
+                  className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-gold-bright hover:underline"
                 >
                   Open in Google Maps
                   <ArrowIcon className="size-4" />
@@ -310,7 +366,7 @@ function VisitStrip() {
             </div>
 
             <div className="flex gap-4">
-              <ClockIcon className="mt-1 size-5 shrink-0 text-leaf" />
+              <ClockIcon className="mt-1 size-5 shrink-0 text-gold" />
               <div className="w-full">
                 <dt className="text-xs tracking-[0.18em] text-muted uppercase">
                   Opening hours
@@ -362,7 +418,7 @@ function FaqTeaser() {
           <details key={faq.question} className="group">
             <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-lg text-cream marker:hidden">
               {faq.question}
-              <span className="flex size-8 shrink-0 items-center justify-center rounded-full border border-line text-leaf-bright transition-transform duration-200 group-open:rotate-45">
+              <span className="flex size-8 shrink-0 items-center justify-center rounded-full border border-line text-gold-bright transition-transform duration-200 group-open:rotate-45">
                 <svg
                   viewBox="0 0 24 24"
                   className="size-4"
@@ -397,7 +453,7 @@ function ClosingCta() {
       <div className="rounded-card relative overflow-hidden border border-line bg-surface/60 px-8 py-16 text-center sm:px-16">
         <div
           aria-hidden
-          className="absolute -top-24 left-1/2 size-96 -translate-x-1/2 rounded-full bg-leaf-deep/30 blur-[100px]"
+          className="absolute -top-24 left-1/2 size-96 -translate-x-1/2 rounded-full bg-gold-deep/12 blur-[100px]"
         />
         <div className="relative mx-auto max-w-2xl">
           <h2 className="text-balance-tight text-3xl leading-tight sm:text-4xl">

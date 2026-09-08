@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 
 const categories: Faq["category"][] = [
   "Visiting",
+  "Specials",
   "Membership",
   "In store",
   "Practical",

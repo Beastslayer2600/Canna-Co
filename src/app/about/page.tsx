@@ -59,8 +59,9 @@ export default function AboutPage() {
             <p>
               The club side keeps things structured and adults-only. The store
               side is open to anyone {site.minimumAge} or over who wants to have
-              a look or ask a question. Both are run the same way: carefully,
-              quietly, and without any of the theatre.
+              a look or ask a question. Behind both sits the lounge. All three
+              are run the same way: carefully, quietly, and without any of the
+              theatre. Quality, family, community — we mean it literally.
             </p>
           </div>
 
@@ -78,7 +79,7 @@ export default function AboutPage() {
               <div>
                 <dt className="text-muted">What</dt>
                 <dd className="mt-1 text-cream">
-                  Private members&rsquo; club &amp; boutique store
+                  Boutique store, members&rsquo; club &amp; lounge
                 </dd>
               </div>
               <div>

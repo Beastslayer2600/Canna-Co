@@ -18,10 +18,12 @@ export function SiteFooter() {
       <Container>
         <div className="grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <Logo />
+            <Logo strap={site.strap} className="items-start" />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-cream-dim">
-              {site.tagline} Members-only club and boutique store, run by people
-              who care about doing this properly.
+              {site.tagline} Run by people who care about doing this properly.
+            </p>
+            <p className="font-display mt-5 text-xs tracking-poster text-gold uppercase">
+              {site.motto}
             </p>
             <div className="mt-6 flex gap-3">
               <a
@@ -29,7 +31,7 @@ export function SiteFooter() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="flex size-10 items-center justify-center rounded-full border border-line text-cream-dim transition-colors hover:border-leaf hover:text-leaf-bright"
+                className="flex size-10 items-center justify-center rounded-full border border-line text-cream-dim transition-colors hover:border-gold hover:text-gold-bright"
               >
                 <InstagramIcon className="size-5" />
               </a>
@@ -38,7 +40,7 @@ export function SiteFooter() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="flex size-10 items-center justify-center rounded-full border border-line text-cream-dim transition-colors hover:border-leaf hover:text-leaf-bright"
+                className="flex size-10 items-center justify-center rounded-full border border-line text-cream-dim transition-colors hover:border-gold hover:text-gold-bright"
               >
                 <FacebookIcon className="size-5" />
               </a>
@@ -46,7 +48,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h2 className="font-display text-sm tracking-[0.2em] text-gold uppercase">
+            <h2 className="font-display text-xs tracking-poster text-gold uppercase">
               Explore
             </h2>
             <ul className="mt-5 space-y-3 text-sm">
@@ -72,12 +74,12 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h2 className="font-display text-sm tracking-[0.2em] text-gold uppercase">
+            <h2 className="font-display text-xs tracking-poster text-gold uppercase">
               Find us
             </h2>
             <ul className="mt-5 space-y-4 text-sm text-cream-dim">
               <li className="flex gap-3">
-                <PinIcon className="mt-0.5 size-4 shrink-0 text-leaf" />
+                <PinIcon className="mt-0.5 size-4 shrink-0 text-gold" />
                 <a
                   href={mapsSearchUrl}
                   target="_blank"
@@ -88,7 +90,7 @@ export function SiteFooter() {
                 </a>
               </li>
               <li className="flex gap-3">
-                <PhoneIcon className="mt-0.5 size-4 shrink-0 text-leaf" />
+                <PhoneIcon className="mt-0.5 size-4 shrink-0 text-gold" />
                 <a
                   href={site.contact.phoneHref}
                   className="transition-colors hover:text-cream"
@@ -97,7 +99,7 @@ export function SiteFooter() {
                 </a>
               </li>
               <li className="flex gap-3">
-                <MailIcon className="mt-0.5 size-4 shrink-0 text-leaf" />
+                <MailIcon className="mt-0.5 size-4 shrink-0 text-gold" />
                 <a
                   href={`mailto:${site.contact.email}`}
                   className="transition-colors hover:text-cream"
@@ -118,7 +120,7 @@ export function SiteFooter() {
               Terms &amp; privacy
             </Link>
             <span>
-              Strictly {site.minimumAge}+. Not for sale to minors.
+              {site.minimumAge}+ only. Please consume responsibly.
             </span>
           </div>
         </div>

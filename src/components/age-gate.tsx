@@ -60,10 +60,10 @@ export function AgeGate() {
       className="fixed inset-0 z-50 flex items-center justify-center bg-ink/95 px-5 backdrop-blur-sm"
     >
       <div className="w-full max-w-md rounded-card border border-line bg-surface p-8 text-center shadow-2xl">
-        <span className="mx-auto flex size-14 items-center justify-center rounded-2xl border border-leaf/40 bg-leaf-deep/50">
+        <span className="mx-auto flex size-14 items-center justify-center rounded-xl border border-gold/30 bg-gold/10">
           <svg
             viewBox="0 0 24 24"
-            className="size-7 text-leaf-bright"
+            className="size-7 text-gold-bright"
             fill="none"
             stroke="currentColor"
             strokeWidth={1.6}
@@ -90,14 +90,14 @@ export function AgeGate() {
               <button
                 type="button"
                 onClick={confirm}
-                className="flex-1 rounded-full bg-leaf px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-leaf-bright"
+                className="flex-1 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-gold-bright"
               >
                 Yes, I&rsquo;m {site.minimumAge}+
               </button>
               <button
                 type="button"
                 onClick={() => setDeclined(true)}
-                className="flex-1 rounded-full border border-line px-6 py-3 text-sm font-semibold text-cream transition-colors hover:border-leaf"
+                className="flex-1 rounded-full border border-line px-6 py-3 text-sm font-semibold text-cream transition-colors hover:border-gold"
               >
                 No
               </button>
@@ -114,7 +114,7 @@ export function AgeGate() {
             <button
               type="button"
               onClick={() => setDeclined(false)}
-              className="mt-7 text-sm font-semibold text-leaf-bright underline-offset-4 hover:underline"
+              className="mt-7 text-sm font-semibold text-gold-bright underline-offset-4 hover:underline"
             >
               Go back
             </button>

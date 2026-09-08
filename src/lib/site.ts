@@ -11,14 +11,24 @@ export const site = {
   suburb: "Moreleta Park",
   city: "Pretoria",
   legalName: "Canna & Co Moreleta Park",
-  tagline: "A private cannabis club and boutique store in Moreleta Park.",
+  tagline: "A private cannabis club, boutique store and lounge in Moreleta Park.",
+  /** Straplines lifted from the poster artwork — used verbatim on the site. */
+  strap: "Premium Cannabis",
+  motto: "Quality. Family. Community.",
+  valueLine: "More value. More vibe.",
+  loungeName: "Canna & Co Moreleta Lounge",
   description:
-    "Canna & Co is a members-only cannabis club and boutique store in Moreleta Park, Pretoria. Join the club, visit the store, and get honest guidance from people who actually know the plant.",
+    "Canna & Co is a members-only cannabis club, boutique store and lounge in Moreleta Park, Pretoria. Weekly specials, an edible bar, game nights, and honest guidance from people who know the plant.",
 
   /** Used for canonical URLs, sitemap and Open Graph tags. */
   url: "https://cannaco.co.za",
 
-  minimumAge: 18,
+  /**
+   * ⚠️ Every poster reads "19+ ONLY", so the site follows the brand's own
+   * published materials. South Africa's age of majority is 18 — if the door
+   * policy is actually 18, change this one number and the whole site updates.
+   */
+  minimumAge: 19,
 
   contact: {
     // PLACEHOLDER — replace with the real shop number.
@@ -90,8 +100,10 @@ export function whatsappLink(message: string) {
 
 export const nav = [
   { href: "/", label: "Home" },
+  { href: "/specials", label: "Specials" },
   { href: "/club", label: "The Club" },
   { href: "/store", label: "The Store" },
+  { href: "/lounge", label: "The Lounge" },
   { href: "/about", label: "About" },
   { href: "/visit", label: "Visit" },
   { href: "/faq", label: "FAQ" },

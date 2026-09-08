@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
 import { ButtonLink } from "@/components/ui/button";
 import { Card, FeatureCard } from "@/components/ui/card";
@@ -18,6 +19,16 @@ export const metadata: Metadata = {
 };
 
 const areas = [
+  {
+    icon: <SparkIcon className="size-5" />,
+    title: "Pre-rolls & flower",
+    copy: "Our own homebrand line alongside Twisted Leaf and Moon Settler — greenhouse, indoor, hydro, infused and the double barrels.",
+  },
+  {
+    icon: <SparkIcon className="size-5" />,
+    title: "The Edible Bar",
+    copy: "Gummies, jellies and cookies picked by strength rather than guesswork — from 10mg singles up to the 200mg packs.",
+  },
   {
     icon: <SparkIcon className="size-5" />,
     title: "Accessories & glass",
@@ -75,7 +86,7 @@ export default function StorePage() {
           title="A small shop that's thought carefully about what it carries."
           lead="We'd rather stock fewer things and stand behind all of them."
         />
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {areas.map((area) => (
             <FeatureCard key={area.title} icon={area.icon} title={area.title}>
               {area.copy}
@@ -86,7 +97,11 @@ export default function StorePage() {
         <p className="mt-10 max-w-2xl text-sm leading-relaxed text-muted">
           Stock moves, so we don&rsquo;t publish a catalogue here. Give us a
           call or send a message and we&rsquo;ll tell you exactly what&rsquo;s
-          on the shelf today.
+          on the shelf today — and check the{" "}
+          <Link href="/specials" className="text-gold-bright hover:underline">
+            weekly specials
+          </Link>{" "}
+          before you come.
         </p>
       </Section>
 
@@ -121,8 +136,8 @@ export default function StorePage() {
             </p>
             <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
               <ButtonLink href="/contact">Get in touch</ButtonLink>
-              <ButtonLink href="/club" variant="secondary">
-                Learn about the club
+              <ButtonLink href="/specials" variant="secondary">
+                See the weekly specials
               </ButtonLink>
             </div>
           </div>

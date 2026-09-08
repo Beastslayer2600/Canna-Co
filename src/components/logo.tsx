@@ -1,37 +1,39 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
 
-export function Logo({ className = "" }: { className?: string }) {
+/** The poster wordmark: leaf mark, engraved caps, letterspaced strapline. */
+export function Logo({
+  className = "",
+  strap = site.suburb,
+}: {
+  className?: string;
+  strap?: string;
+}) {
   return (
     <Link
       href="/"
-      className={`group inline-flex items-center gap-3 ${className}`}
+      className={`group inline-flex flex-col items-center leading-none ${className}`}
       aria-label={`${site.name} — home`}
     >
-      <span className="flex size-10 items-center justify-center rounded-xl border border-leaf/40 bg-leaf-deep/50 transition-colors group-hover:border-leaf">
-        <svg
-          viewBox="0 0 24 24"
-          className="size-5 text-leaf-bright"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={1.6}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          aria-hidden
-        >
-          <path d="M12 21V11" />
-          <path d="M12 11c0-4 2.5-7.5 7-8 .5 4.5-2 8-7 8Z" />
-          <path d="M12 15c-4.2 0-7-2.4-7.4-6.2C8.6 9 12 11 12 15Z" />
-        </svg>
+      <svg
+        viewBox="0 0 24 24"
+        className="mb-1.5 size-4 text-gold transition-colors group-hover:text-gold-bright"
+        fill="currentColor"
+        aria-hidden
+      >
+        <path d="M12 2.2c1.1 1.5 1.6 3 1.5 4.6 1.2-1 2.6-1.6 4.2-1.7-.3 1.7-1.1 3-2.4 4 1.5.1 2.8.6 4 1.6-1.4 1-2.9 1.4-4.4 1.3 1 .9 1.7 2 2 3.4-1.5-.2-2.8-.8-3.8-1.8.1 1.2-.1 2.4-.6 3.5H12h-.5c-.5-1.1-.7-2.3-.6-3.5-1 1-2.3 1.6-3.8 1.8.3-1.4 1-2.5 2-3.4-1.5.1-3-.3-4.4-1.3 1.2-1 2.5-1.5 4-1.6-1.3-1-2.1-2.3-2.4-4 1.6.1 3 .7 4.2 1.7-.1-1.6.4-3.1 1.5-4.6Z" />
+        <path d="M11.6 15.6h.8V22h-.8z" />
+      </svg>
+
+      <span className="font-display text-lg font-semibold tracking-[0.12em] whitespace-nowrap text-cream">
+        CANNA<span className="text-gold">&amp;</span>CO
       </span>
-      <span className="leading-none">
-        <span className="block font-display text-lg font-semibold tracking-tight text-cream">
-          Canna <span className="text-leaf-bright">&amp;</span> Co
+
+      {strap ? (
+        <span className="mt-1.5 text-[0.55rem] font-medium tracking-[0.3em] whitespace-nowrap text-muted uppercase">
+          {strap}
         </span>
-        <span className="mt-1 block text-[0.6rem] font-medium tracking-[0.24em] text-muted uppercase">
-          {site.suburb}
-        </span>
-      </span>
+      ) : null}
     </Link>
   );
 }

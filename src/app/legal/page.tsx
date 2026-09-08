@@ -88,14 +88,14 @@ export default function LegalPage() {
               For anything on this page, contact us at{" "}
               <a
                 href={`mailto:${site.contact.email}`}
-                className="text-leaf-bright hover:underline"
+                className="text-gold-bright hover:underline"
               >
                 {site.contact.email}
               </a>{" "}
               or write to {site.legalName}, {formattedAddress}.
             </p>
             <p className="mt-4">
-              <Link href="/contact" className="text-leaf-bright hover:underline">
+              <Link href="/contact" className="text-gold-bright hover:underline">
                 Our contact page
               </Link>{" "}
               has every other way to reach us.

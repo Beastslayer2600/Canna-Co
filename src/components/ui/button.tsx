@@ -7,10 +7,10 @@ const base =
   "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-leaf text-ink hover:bg-leaf-bright",
+  primary: "bg-gold text-ink hover:bg-gold-bright",
   secondary:
-    "border border-line bg-surface/60 text-cream hover:border-leaf hover:bg-surface-2",
-  ghost: "text-cream hover:text-leaf-bright",
+    "border border-line bg-surface/60 text-cream hover:border-gold hover:bg-surface-2",
+  ghost: "text-cream hover:text-gold-bright",
 };
 
 export function ButtonLink({

@@ -32,10 +32,10 @@ const steps = [
 ];
 
 const benefits = [
-  "Access to the members' lounge",
+  "Access to the Moreleta Lounge",
   "A private, discreet space to sit and talk",
   "One-on-one guidance from the team",
-  "Invitations to members-only events",
+  "Game nights and members-only events",
   "Growing advice, from first plant onwards",
   "A community that actually looks out for each other",
 ];
@@ -92,7 +92,7 @@ export default function ClubPage() {
             {steps.map((step, index) => (
               <li key={step.title}>
                 <Card className="flex gap-6">
-                  <span className="font-display text-3xl text-leaf/50 tabular-nums">
+                  <span className="font-display text-3xl text-gold/45 tabular-nums">
                     0{index + 1}
                   </span>
                   <div>
@@ -119,7 +119,7 @@ export default function ClubPage() {
             <ul className="mt-10 space-y-4">
               {benefits.map((benefit) => (
                 <li key={benefit} className="flex items-start gap-3">
-                  <CheckIcon className="mt-0.5 size-5 shrink-0 text-leaf" />
+                  <CheckIcon className="mt-0.5 size-5 shrink-0 text-gold" />
                   <span className="text-cream-dim">{benefit}</span>
                 </li>
               ))}

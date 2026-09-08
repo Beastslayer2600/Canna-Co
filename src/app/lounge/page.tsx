@@ -15,15 +15,15 @@ export const metadata: Metadata = {
 const prep = [
   {
     title: "Download D&D Beyond",
-    copy: "Character sheets, rules and a dice roller, all in one app. Free to use for what we run.",
+    copy: "Character sheets, the rules and a dice roller in one app, free for everything we run. Ten minutes of setup saves you an hour at the table.",
   },
   {
     title: "Have a level 8 character ready",
-    copy: "Bring one you've played before or roll a fresh one. If you've never made a character, come early and we'll build one with you.",
+    copy: "Bring one you've played, or roll a fresh one. Never built a character in your life? Come early and we'll make one with you — it's genuinely the fun part.",
   },
   {
     title: "Bring dice — or don't",
-    copy: "A physical set is more fun, but the app rolls perfectly well. Nobody gets turned away for showing up empty-handed.",
+    copy: "A physical set is more satisfying, but the app rolls fine and nobody's counting. Turning up empty-handed has never stopped anyone playing.",
   },
 ];
 
@@ -40,7 +40,7 @@ export default function LoungePage() {
       <PageHero
         eyebrow="The Lounge"
         title="Somewhere to actually sit down."
-        lead={`${site.loungeName} is the members' room behind the store — low light, good company, and a table that regularly gets taken over by a game.`}
+        lead={`${site.loungeName} is the members' room behind the store. Low light, good chairs, decent company, and a table that gets commandeered for a campaign more often than you'd expect.`}
       >
         <div className="flex flex-col gap-3 sm:flex-row">
           <ButtonLink href="/club">
@@ -59,7 +59,7 @@ export default function LoungePage() {
             <SectionHeading
               eyebrow="Game nights"
               title="Dungeons & Dragons at the lounge."
-              lead="We run a table for members — beginners and experienced players both welcome. Roll. Connect. Adventure."
+              lead="We run a table for members. Never played? Good — half the people at it hadn't either, until they sat down. Roll. Connect. Adventure."
             />
             <ul className="mt-10 space-y-4">
               {houseNotes.map((note) => (

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { LeafFrame } from "./ui/botanical";
 import { Container } from "./ui/container";
 import { Eyebrow } from "./ui/section";
 
@@ -19,6 +20,7 @@ export function PageHero({
         aria-hidden
         className="absolute -top-52 left-1/2 size-[36rem] -translate-x-1/2 rounded-full bg-gold-deep/12 blur-[120px]"
       />
+      <LeafFrame side="right" />
       <Container className="relative">
         <div className="max-w-3xl py-20 sm:py-28">
           <Eyebrow>{eyebrow}</Eyebrow>

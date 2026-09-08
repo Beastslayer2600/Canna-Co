@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const goodToKnow = [
   {
     title: "Parking",
-    copy: "There's parking right outside. Saturday mornings are the busiest stretch of the week — come a little later if you'd rather have the place quiet.",
+    copy: "Parking right outside. Saturday mornings are the busiest stretch of the week — come after lunch if you'd rather have the place to yourself.",
   },
   {
     title: "Bring ID",
@@ -28,11 +28,11 @@ const goodToKnow = [
   },
   {
     title: "No booking needed",
-    copy: "The store is walk-in during opening hours. Message us first only if you want a proper sit-down or you're after something specific.",
+    copy: "Walk in whenever we're open. Message first only if you want a proper sit-down with someone, or you're driving out for something specific.",
   },
   {
     title: "Accessibility",
-    copy: "Ground floor, step-free entrance. If you have a specific access need, message us before you come and we'll make sure it's sorted.",
+    copy: "Ground floor, step-free entrance. Tell us about any specific access need before you come and we'll have it sorted by the time you arrive.",
   },
 ];
 

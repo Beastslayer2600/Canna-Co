@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const steps = [
   {
     title: "Have a chat",
-    copy: "Walk in during opening hours, or message us first if you'd rather ask your questions before committing to anything. Nobody is going to hard-sell you.",
+    copy: "Walk in any day from 08:00, or message first if you'd rather get your questions in before committing to a conversation. Nobody's going to hard-sell you.",
   },
   {
     title: "Bring your ID",
@@ -23,11 +23,11 @@ const steps = [
   },
   {
     title: "Go through the rules",
-    copy: "We'll take you through how the club works, what's expected of members, and what we will and won't do. It's short, it's plain language, and you can ask anything.",
+    copy: "How the club works, what's expected of you, and what we will and won't do. It's short, it's in plain English, and you can interrupt as often as you like.",
   },
   {
     title: "You're a member",
-    copy: "From that moment you have access to the lounge, to member events, and to the team whenever you need guidance.",
+    copy: "Lounge access from that moment, plus the events and a team you can lean on whenever you need to. No probation period, no tiers to climb.",
   },
 ];
 
@@ -43,19 +43,19 @@ const benefits = [
 const rules = [
   {
     title: `Strictly ${site.minimumAge}+`,
-    copy: "Every member is age-verified at sign-up. No exceptions, ever, for anyone.",
+    copy: "Age-verified at sign-up, every single time. No exceptions — not for a friend, not for a regular, not for anyone.",
   },
   {
     title: "Members only",
-    copy: "The lounge and club benefits are for members. You can't sign in a guest — but they're welcome to join.",
+    copy: "The lounge is for members. You can't sign in a guest — but they can sign themselves up in ten minutes and join you.",
   },
   {
     title: "Respect the space",
-    copy: "Keep it calm, keep it clean, look after the people around you. That's most of it.",
+    copy: "Keep it calm, keep it clean, look after whoever's next to you. Genuinely, that's most of it.",
   },
   {
     title: "Don't drive impaired",
-    copy: "If you're not in a state to drive, we'll help you sort out a lift. No judgement, no argument.",
+    copy: "If you're not in a state to drive, say so and we'll help you sort a lift. No judgement, no lecture, no argument.",
   },
 ];
 
@@ -65,7 +65,7 @@ export default function ClubPage() {
       <PageHero
         eyebrow="The Club"
         title="A private club, for adults who take this seriously."
-        lead="Canna & Co's club side is members-only by design. It keeps the space calm, keeps everyone accountable, and means we know exactly who's in the room."
+        lead="Members-only by design. It keeps the space calm, keeps everyone accountable, and means we always know exactly who's in the room. That's not gatekeeping — it's the reason the room is worth being in."
       >
         <div className="flex flex-col gap-3 sm:flex-row">
           <ButtonLink href="/contact">
@@ -84,7 +84,7 @@ export default function ClubPage() {
             <SectionHeading
               eyebrow="How it works"
               title="Four steps, one visit."
-              lead="There's no waiting list and no application to submit online. Everything happens in person, which is how we prefer it."
+              lead="No waiting list, nothing to submit online. It all happens face to face, because we'd rather meet you than read a form about you."
             />
           </div>
 
@@ -114,7 +114,7 @@ export default function ClubPage() {
             <SectionHeading
               eyebrow="What you get"
               title="Membership, in plain terms."
-              lead="No tiers you can't understand and no points system. Just access, guidance and good company."
+              lead="No tiers, no points, no app to download. Just access, guidance and good company."
             />
             <ul className="mt-10 space-y-4">
               {benefits.map((benefit) => (
@@ -151,7 +151,7 @@ export default function ClubPage() {
             <SectionHeading
               eyebrow="Fees"
               title="What does it cost to join?"
-              lead="Membership options change from time to time, so rather than post a number that goes stale, we'll talk you through the current options in person or over a message. There's never any pressure to sign up on the day."
+              lead="Membership options change, and a stale number on a website helps nobody. Ask us in person or drop us a message and we'll walk you through what's current. Nobody's going to push you to sign on the day."
             />
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/contact">

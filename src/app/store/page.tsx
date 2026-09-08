@@ -37,27 +37,27 @@ const areas = [
   {
     icon: <LeafIcon className="size-5" />,
     title: "Grow essentials",
-    copy: "The gear and know-how you need to grow at home properly — and an honest word about what you genuinely don't need to buy.",
+    copy: "What you actually need to grow at home properly — and a frank word about the expensive things you genuinely don't.",
   },
   {
     icon: <UsersIcon className="size-5" />,
     title: "People who know",
-    copy: "The most useful thing in the shop isn't on a shelf. Come in with a question and leave with a real answer.",
+    copy: "The most useful thing in here isn't on a shelf. Come in with a question and leave with an actual answer, not a shrug and a price.",
   },
 ];
 
 const promises = [
   {
     title: "We won't upsell you",
-    copy: "If the cheaper thing does the job, we'll tell you the cheaper thing does the job. We'd rather you come back than spend more today.",
+    copy: "If the cheaper thing does the job, we'll say so. We'd much rather you came back next week than spent more today.",
   },
   {
     title: "We'll be straight with you",
-    copy: "If we don't stock what you need, or we think you're heading down the wrong path, you'll hear that instead of a polite nod.",
+    copy: "If we don't have what you need, or we reckon you're heading down the wrong path, you'll hear it — not a polite nod and a sale.",
   },
   {
     title: "No stupid questions",
-    copy: "Everyone starts somewhere. Ask us the thing you're embarrassed to Google.",
+    copy: "Everyone starts somewhere. Ask us the thing you're too embarrassed to Google — we've heard it, and we didn't laugh then either.",
   },
 ];
 
@@ -67,7 +67,7 @@ export default function StorePage() {
       <PageHero
         eyebrow="The Store"
         title="Walk in, ask anything, leave with the right thing."
-        lead={`Our store in ${site.suburb} is open to any adult — you don't need to be a club member. Come browse, come ask, or come just to get a straight answer.`}
+        lead={`Open to any adult — no membership needed, no appointment, no minimum spend. Browse, ask, or come in purely to get a straight answer to something. From 08:00, seven days a week.`}
       >
         <div className="flex flex-col gap-3 sm:flex-row">
           <ButtonLink href="/visit">
@@ -83,8 +83,8 @@ export default function StorePage() {
       <Section>
         <SectionHeading
           eyebrow="What's inside"
-          title="A small shop that's thought carefully about what it carries."
-          lead="We'd rather stock fewer things and stand behind all of them."
+          title="A small shop that's fussy about what it carries."
+          lead="We'd rather stock fewer things and stand behind every one of them than fill a wall and shrug."
         />
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {areas.map((area) => (
@@ -132,7 +132,7 @@ export default function StorePage() {
             <h2 className="text-3xl sm:text-4xl">Looking for something specific?</h2>
             <p className="mt-5 leading-relaxed text-cream-dim">
               Message us before you drive out. We&rsquo;ll check whether
-              it&rsquo;s in, and hold it for you if it is.
+              it&rsquo;s on the shelf, and put it aside for you if it is.
             </p>
             <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
               <ButtonLink href="/contact">Get in touch</ButtonLink>

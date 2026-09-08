@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/page-hero";
+import { TodaysSpecial } from "@/components/todays-special";
+import { Ornament } from "@/components/ui/botanical";
+import { Marquee } from "@/components/ui/marquee";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { PosterTitle } from "@/components/ui/poster-title";
@@ -20,12 +23,15 @@ export default function SpecialsPage() {
       <PageHero
         eyebrow="Weekly specials"
         title="There's a deal on most days of the week."
-        lead={`${site.valueLine} Four standing specials — the pre-roll days, and the edible bar on a Sunday.`}
+        lead={`${site.valueLine} Four standing specials — three pre-roll days and the Edible Bar on a Sunday. Turn up on the right day and your money goes noticeably further.`}
       >
-        <ButtonLink href="/visit">
-          Come in and grab them
-          <ArrowIcon className="size-4" />
-        </ButtonLink>
+        <TodaysSpecial className="mb-7" />
+        <div>
+          <ButtonLink href="/visit">
+            Come in and grab them
+            <ArrowIcon className="size-4" />
+          </ButtonLink>
+        </div>
       </PageHero>
 
       {/* Week-at-a-glance strip */}
@@ -68,6 +74,7 @@ export default function SpecialsPage() {
                 <p className="mt-7 leading-relaxed text-cream-dim">
                   {special.blurb}
                 </p>
+                <Ornament className="mt-8 justify-start lg:mt-10" leaf />
               </div>
 
               <div>
@@ -109,6 +116,15 @@ export default function SpecialsPage() {
         ))}
       </Section>
 
+      <Marquee
+        items={[
+          "More value. More vibe.",
+          "Limited stock available",
+          "Quality. Family. Community.",
+          "Open seven days from 08:00",
+        ]}
+      />
+
       <Section className="border-t border-line bg-ink-soft pt-16">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold tracking-poster text-gold uppercase">
@@ -119,8 +135,8 @@ export default function SpecialsPage() {
           </h2>
           <p className="mt-5 leading-relaxed text-cream-dim">
             These are the standing weekly deals, but ranges sell out and the
-            line-up changes. Message us on the day and we&rsquo;ll tell you
-            exactly what&rsquo;s on the shelf.
+            line-up shifts. Message us on the morning and we&rsquo;ll tell you
+            exactly what&rsquo;s on the shelf before you get in the car.
           </p>
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
             <ButtonLink href="/contact">Check what&rsquo;s in</ButtonLink>

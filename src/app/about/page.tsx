@@ -15,19 +15,19 @@ export const metadata: Metadata = {
 const values = [
   {
     title: "Honest before anything else",
-    copy: "We'd rather lose a sale than tell you something that isn't true. That goes for what we stock, what it does, and what it won't do for you.",
+    copy: "We'd rather lose a sale than tell you something that isn't true — about what we stock, what it does, or what it definitely won't do for you.",
   },
   {
     title: "Careful, not casual",
-    copy: "A members model, real ID checks and a properly run room. Doing this responsibly is what lets us keep doing it at all.",
+    copy: "A members model, real ID checks, a properly run room. Unglamorous, and precisely why we're still here.",
   },
   {
     title: "Local, on purpose",
-    copy: "We're a Moreleta Park shop for Moreleta Park people. We know the neighbourhood, and we'd like it to know us.",
+    copy: "A Moreleta Park shop for Moreleta Park people. We know the neighbourhood, and we'd quite like it to know us back.",
   },
   {
     title: "Everyone's welcome to ask",
-    copy: "Nervous first-timers, curious retirees, seasoned growers — the same patience for all of them.",
+    copy: "Nervous first-timers, curious retirees, growers with strong opinions about nutrients — same patience for all of them.",
   },
 ];
 
@@ -36,25 +36,26 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About us"
-        title="We opened the kind of place we wanted to walk into."
-        lead={`Somewhere calm, well-run and genuinely knowledgeable — in ${site.suburb}, rather than an hour's drive away.`}
+        title="We built the shop we kept wishing existed."
+        lead={`Somewhere calm, properly run and genuinely knowledgeable — in ${site.suburb}, rather than an hour down the N1.`}
       />
 
       <Section>
         <div className="grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
           <div className="max-w-2xl space-y-6 text-lg leading-relaxed text-cream-dim">
             <p>
-              For a long time, getting decent advice about cannabis in Pretoria
-              East meant knowing the right person. Everything else was guesswork,
-              forum threads and whatever a stranger on the internet felt like
-              saying that day.
+              For years, getting a straight answer about cannabis in Pretoria
+              East meant knowing the right person. If you didn&rsquo;t, you were
+              left with guesswork, forum threads from 2014, and whatever a
+              stranger on the internet felt like saying that day.
             </p>
             <p>
-              Canna &amp; Co exists to fix that. We built a proper store and a
-              private members&rsquo; club under one roof, staffed by people who
-              have actually done the reading and the growing — and who&rsquo;ll
-              happily say &ldquo;I don&rsquo;t know&rdquo; when that&rsquo;s the
-              honest answer.
+              So we built the other thing: a proper store and a private
+              members&rsquo; club under one roof, staffed by people who have
+              actually done the reading and killed a few plants learning the
+              rest. People who will happily say &ldquo;I don&rsquo;t
+              know&rdquo; when that&rsquo;s the honest answer, and then go and
+              find out.
             </p>
             <p>
               The club side keeps things structured and adults-only. The store
@@ -122,8 +123,8 @@ export default function AboutPage() {
           <div className="mx-auto max-w-xl">
             <h2 className="text-3xl sm:text-4xl">Come meet the team.</h2>
             <p className="mt-5 leading-relaxed text-cream-dim">
-              The quickest way to understand what we&rsquo;re about is to spend
-              five minutes in the shop.
+              The quickest way to work out whether we&rsquo;re your sort of
+              place is five minutes inside it.
             </p>
             <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
               <ButtonLink href="/visit">

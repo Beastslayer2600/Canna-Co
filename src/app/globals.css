@@ -30,6 +30,17 @@
   --radius-card: 0.75rem;
 
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-marquee: marquee 38s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      /* Each track is half the doubled row, so -100% lands seamlessly. */
+      transform: translateX(-100%);
+    }
+  }
 
   @keyframes fade-up {
     from {

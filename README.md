@@ -102,13 +102,18 @@ src/
     robots.ts         generated robots.txt
     globals.css       Tailwind theme — colours, fonts, base styles
   components/
-    age-gate.tsx      18+ confirmation, remembered per browser
+    age-gate.tsx      19+ confirmation, remembered per browser
+    open-now.tsx      live open/closed badge, on the shop's clock
+    todays-special.tsx  "on today" pill for whichever special is running
+    utility-bar.tsx   thin strip above the header: status + phone
     site-header.tsx   sticky header + mobile menu
     site-footer.tsx
     contact-form.tsx  composes a mailto:/WhatsApp message; sends nothing itself
     page-hero.tsx     shared inner-page hero
-    ui/               buttons, cards, sections, icons, poster-title
+    ui/               buttons, cards, sections, icons, poster-title,
+                      botanical (leaf art + ornaments), marquee
   lib/
+    hours.ts          open/closed + today's special, in Africa/Johannesburg
     site.ts           ⚠️ all business details live here
     specials.ts       ⚠️ the weekly deals, transcribed from the posters
     faqs.ts           FAQ content
@@ -119,6 +124,13 @@ src/
 **The age gate** blocks the page until a visitor confirms they're 18+, and
 remembers the answer in `localStorage`. It's a deterrent, not real
 verification — actual age checking happens at the door.
+
+**The open/closed badge runs on the shop's clock, not the visitor's.**
+`src/lib/hours.ts` resolves the day and time in `Africa/Johannesburg` via
+`Intl`, so someone browsing from London still sees the right answer. It reads
+`hoursSpec`, which is why that has to stay in step with `hours`. The badge and
+the "on today" pill both render after hydration rather than at build time —
+otherwise a static page would freeze whatever was true when it was built.
 
 **The contact form has no backend.** It builds the message and hands it to the
 visitor's email client or WhatsApp. That keeps hosting simple and means the site

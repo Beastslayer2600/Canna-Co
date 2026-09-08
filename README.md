@@ -71,9 +71,11 @@ Also worth doing before launch:
    business in a particular voice and make claims about how it operates
    (parking, accessibility, sign-up taking ten minutes). Correct anything that
    isn't true.
-3. **Add real photography.** The design is currently typographic — no photos of
-   the space, the team or the product line-ups. The poster artwork would work
-   well on the Specials page, and photos of the lounge would carry that page.
+3. **More photography.** The Lounge page has two real photos of the room; the
+   rest of the site is still purely typographic. The poster artwork would work
+   well on the Specials page, and a shot of the shop floor would carry the
+   Store page. Source images live in `src/images/` (imported, so Next generates
+   sizes and blur placeholders) rather than `public/`.
 4. **Add a favicon and OG image.** `src/app/favicon.ico` is still the Next.js
    default, and there's no Open Graph image yet, so link previews will be
    text-only. One of the posters would make a good OG image.
@@ -103,6 +105,7 @@ src/
     globals.css       Tailwind theme — colours, fonts, base styles
   components/
     age-gate.tsx      19+ confirmation, remembered per browser
+    lounge-gallery.tsx  the two lounge photos, with captions
     open-now.tsx      live open/closed badge, on the shop's clock
     todays-special.tsx  "on today" pill for whichever special is running
     utility-bar.tsx   thin strip above the header: status + phone
@@ -124,6 +127,10 @@ src/
 **The age gate** blocks the page until a visitor confirms they're 18+, and
 remembers the answer in `localStorage`. It's a deterrent, not real
 verification — actual age checking happens at the door.
+
+**The lounge is behind the closet**, and the site says so on the Lounge page,
+the home page, the About page and in the FAQ. If that's meant to stay a
+surprise for people who walk in, those are the four places to soften.
 
 **The open/closed badge runs on the shop's clock, not the visitor's.**
 `src/lib/hours.ts` resolves the day and time in `Africa/Johannesburg` via

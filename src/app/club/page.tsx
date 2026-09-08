@@ -32,8 +32,8 @@ const steps = [
 ];
 
 const benefits = [
-  "Access to the Moreleta Lounge",
-  "A private, discreet space to sit and talk",
+  "The Moreleta Lounge — through the closet, out back",
+  "Deep chairs, an art wall and sport on the big screen",
   "One-on-one guidance from the team",
   "Game nights and members-only events",
   "Growing advice, from first plant onwards",

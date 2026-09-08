@@ -62,7 +62,8 @@ export default function AboutPage() {
               side is open to anyone {site.minimumAge} or over who wants to have
               a look or ask a question. Behind both sits the lounge. All three
               are run the same way: carefully, quietly, and without any of the
-              theatre. Quality, family, community — we mean it literally.
+              theatre. And yes, the lounge is behind the closet. We could have
+              put a normal door there. We chose not to.
             </p>
           </div>
 

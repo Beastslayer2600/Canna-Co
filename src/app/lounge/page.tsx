@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { LoungeGallery } from "@/components/lounge-gallery";
 import { PageHero } from "@/components/page-hero";
 import { ButtonLink } from "@/components/ui/button";
+import { Ornament, Plate } from "@/components/ui/botanical";
 import { Card } from "@/components/ui/card";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { ArrowIcon, CheckIcon } from "@/components/ui/icons";
@@ -8,7 +10,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "The Lounge",
-  description: `${site.loungeName} — a members' lounge with game nights, including Dungeons & Dragons for beginners and experienced players alike.`,
+  description: `${site.loungeName} — the members' lounge behind the closet. Big screen, deep chairs, an art wall, and Dungeons & Dragons nights for beginners and veterans alike.`,
   alternates: { canonical: "/lounge" },
 };
 
@@ -27,6 +29,25 @@ const prep = [
   },
 ];
 
+const inThere = [
+  {
+    title: "A proper screen",
+    copy: "Football most weekends, and a console plugged in the rest of the time. Nobody minds if you just want to sit and watch something.",
+  },
+  {
+    title: "Chairs worth staying in",
+    copy: "Deep bouclé tub chairs, a sofa at the art end, and enough table space to actually put something down.",
+  },
+  {
+    title: "The art wall",
+    copy: "Slatted oak, a flock of birds mid-flight, and two ledges of prints that range from Northern Lights to a Mona Lisa who has clearly had a day.",
+  },
+  {
+    title: "Game nights",
+    copy: "A D&D table for members — beginners and veterans both. The Game of Thrones books on the shelf are not decoration; someone will talk to you about them.",
+  },
+];
+
 const houseNotes = [
   "Beginners and experienced players both welcome",
   "No cost to sit in — you just need to be a member",
@@ -39,8 +60,8 @@ export default function LoungePage() {
     <>
       <PageHero
         eyebrow="The Lounge"
-        title="Somewhere to actually sit down."
-        lead={`${site.loungeName} is the members' room behind the store. Low light, good chairs, decent company, and a table that gets commandeered for a campaign more often than you'd expect.`}
+        title="It's behind the closet."
+        lead={`${site.loungeName} is the members' room out the back — and you get to it through the closet. Low light, deep chairs, a wall of frankly excellent nonsense, and a screen showing whatever's on.`}
       >
         <div className="flex flex-col gap-3 sm:flex-row">
           <ButtonLink href="/club">
@@ -54,7 +75,33 @@ export default function LoungePage() {
       </PageHero>
 
       <Section>
-        <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:gap-20">
+        <SectionHeading
+          eyebrow="Have a look"
+          title="Two ends, one room."
+          lead="Art and a sofa at one end, a big screen and chairs you disappear into at the other."
+        />
+        <div className="mt-14">
+          <LoungeGallery />
+        </div>
+      </Section>
+
+      <Section className="border-y border-line bg-ink-soft">
+        <SectionHeading
+          eyebrow="What's in there"
+          title="Things to do with an afternoon."
+        />
+        <div className="mt-14 grid gap-6 sm:grid-cols-2">
+          {inThere.map((item) => (
+            <Card key={item.title} className="h-full">
+              <h3 className="text-xl">{item.title}</h3>
+              <p className="mt-3 leading-relaxed text-cream-dim">{item.copy}</p>
+            </Card>
+          ))}
+        </div>
+      </Section>
+
+      <Section>
+        <div className="grid gap-14 lg:grid-cols-2 lg:gap-20">
           <div>
             <SectionHeading
               eyebrow="Game nights"
@@ -101,13 +148,16 @@ export default function LoungePage() {
         </div>
       </Section>
 
-      <Section className="border-y border-line bg-ink-soft">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="font-script text-4xl text-gold">Roll. Connect. Adventure.</p>
-          <p className="mt-6 leading-relaxed text-cream-dim">
+      <Section className="border-t border-line bg-ink-soft">
+        <Plate className="px-8 py-14 text-center sm:px-14">
+          <p className="font-script text-4xl text-gold sm:text-5xl">
+            Roll. Connect. Adventure.
+          </p>
+          <Ornament className="mt-7" leaf />
+          <p className="mx-auto mt-7 max-w-xl leading-relaxed text-cream-dim">
             The lounge is for members. If you&rsquo;re not one yet, signing up
             takes about ten minutes in store — bring your ID and we&rsquo;ll
-            sort it on the day.
+            sort it on the day. Then we&rsquo;ll show you the closet.
           </p>
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
             <ButtonLink href="/club">How membership works</ButtonLink>
@@ -115,7 +165,7 @@ export default function LoungePage() {
               Find the lounge
             </ButtonLink>
           </div>
-        </div>
+        </Plate>
       </Section>
     </>
   );

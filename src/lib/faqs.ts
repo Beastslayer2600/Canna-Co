@@ -56,6 +56,18 @@ export const faqs: Faq[] = [
   },
   {
     category: "Visiting",
+    question: "Where exactly is the lounge?",
+    answer:
+      "Out the back, through the closet. That is not a figure of speech — you genuinely go through the closet. It's members only, so ask someone at the counter and they'll walk you through.",
+  },
+  {
+    category: "Visiting",
+    question: "What's actually in the lounge?",
+    answer:
+      "A big screen with sport on most weekends and a console the rest of the time, deep chairs you sink into, a sofa at the art end, and a slatted oak wall covered in framed prints. Plus the table the D&D nights run on.",
+  },
+  {
+    category: "Visiting",
     question: "What happens at game night?",
     answer:
       "A Dungeons & Dragons table in the lounge, for members. Beginners and veterans both — nobody minds explaining a saving throw. Bring a level 8 character on the D&D Beyond app, and dice if you own any. Dates go up in store and on our socials.",

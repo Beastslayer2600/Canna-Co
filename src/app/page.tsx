@@ -154,8 +154,8 @@ function TwoTracks() {
       href: "/lounge",
       eyebrow: "The Lounge",
       title: "Moreleta Lounge",
-      copy: "The members' room out back. Low light, good company, and a table that gets commandeered for D&D more often than you'd think.",
-      points: ["Somewhere to sit", "D&D game nights", "Beginners welcome"],
+      copy: "The members' room out back — through the closet, genuinely. Big screen, deep chairs, and a table that gets commandeered for D&D more often than you'd think.",
+      points: ["Behind the closet", "D&D game nights", "Sport on the big screen"],
       icon: <LeafIcon className="size-5" />,
     },
   ];

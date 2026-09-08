@@ -1,6 +1,9 @@
 /**
  * Single source of truth for every business detail on the site.
  *
+ * The opening hours and the 19+ age limit are real, taken from Canna & Co's
+ * own poster artwork.
+ *
  * ⚠️ PLACEHOLDERS: the address, phone number, email and social handles below
  * are stand-ins so the site renders end to end. Replace them with Canna & Co's
  * real details before the site goes live — nothing else needs to change.
@@ -50,23 +53,26 @@ export const site = {
     country: "South Africa",
   },
 
-  /** Opening hours, in the order they should appear. */
+  /** Opening hours, in the order they should appear. Real — from the spring
+   *  hours poster. Open seven days a week. */
   hours: [
-    { days: "Monday – Thursday", time: "09:00 – 18:00" },
-    { days: "Friday", time: "09:00 – 19:00" },
-    { days: "Saturday", time: "09:00 – 16:00" },
-    { days: "Sunday & public holidays", time: "Closed" },
+    { days: "Monday – Thursday", time: "08:00 – 20:00" },
+    { days: "Friday & Saturday", time: "08:00 – 21:00" },
+    { days: "Sunday", time: "08:00 – 18:00" },
   ],
+
+  /** Shown under the hours wherever they appear. */
+  hoursNote: "Public holidays: regular opening hours apply.",
 
   /** Machine-readable mirror of `hours`, used for the Schema.org record. */
   hoursSpec: [
     {
       days: ["Monday", "Tuesday", "Wednesday", "Thursday"],
-      opens: "09:00",
-      closes: "18:00",
+      opens: "08:00",
+      closes: "20:00",
     },
-    { days: ["Friday"], opens: "09:00", closes: "19:00" },
-    { days: ["Saturday"], opens: "09:00", closes: "16:00" },
+    { days: ["Friday", "Saturday"], opens: "08:00", closes: "21:00" },
+    { days: ["Sunday"], opens: "08:00", closes: "18:00" },
   ],
 
   socials: {

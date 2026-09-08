@@ -383,6 +383,7 @@ function VisitStrip() {
                       </li>
                     ))}
                   </ul>
+                  <p className="mt-4 text-xs text-muted">{site.hoursNote}</p>
                 </dd>
               </div>
             </div>

@@ -79,6 +79,12 @@ export const faqs: Faq[] = [
       "Yes. Whether it's your first plant or your fifth season, we'll happily talk through setup, feeding, light and the mistakes that catch most people out.",
   },
   {
+    category: "Visiting",
+    question: "Are you open on Sundays and public holidays?",
+    answer:
+      "Both. We're open seven days a week from 08:00 — until 20:00 Monday to Thursday, 21:00 on Friday and Saturday, and 18:00 on Sunday. Public holidays run on regular hours.",
+  },
+  {
     category: "Practical",
     question: "Is there parking?",
     answer:

@@ -44,10 +44,13 @@ page, sitemap and the Schema.org record Google reads:
 - `contact.whatsapp` — WhatsApp number, digits only, country code first (e.g. `2712...`)
 - `contact.email`
 - `address` — the real street address
-- `hours` **and** `hoursSpec` — keep these two in sync; the first is what
-  visitors read, the second is what search engines parse
 - `socials` — real profile URLs, or delete the entries
 - `url` — the live domain, used for canonical URLs and the sitemap
+
+The **opening hours are real** (spring schedule: 08:00–20:00 Mon–Thu,
+08:00–21:00 Fri & Sat, 08:00–18:00 Sun, public holidays on regular hours). When
+they change, edit `hours` **and** `hoursSpec` together — the first is what
+visitors read, the second is what search engines parse.
 
 **`minimumAge` is set to 19**, because every poster reads "19+ ONLY". South
 Africa's age of majority is 18, so if the door policy is actually 18, change

@@ -42,7 +42,7 @@ export default function VisitPage() {
       <PageHero
         eyebrow="Visit"
         title={`Find us in ${site.suburb}.`}
-        lead="Everything you need to get here — address, hours, parking and what to bring."
+        lead="Open seven days a week from 08:00, public holidays included. Everything you need to get here — address, hours, parking and what to bring."
       >
         <div className="flex flex-col gap-3 sm:flex-row">
           <ButtonLink href={mapsSearchUrl} external>
@@ -94,6 +94,7 @@ export default function VisitPage() {
                         </li>
                       ))}
                     </ul>
+                    <p className="mt-4 text-xs text-muted">{site.hoursNote}</p>
                   </dd>
                 </div>
               </div>

@@ -112,6 +112,7 @@ export default function ContactPage() {
                   </li>
                 ))}
               </ul>
+              <p className="mt-4 text-xs text-muted">{site.hoursNote}</p>
             </div>
           </div>
 

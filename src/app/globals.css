@@ -22,6 +22,10 @@
   --color-leaf: #4e9c60;
   --color-ember: #9e2b2b;
 
+  /* The lounge's light-oak batten wall. */
+  --color-oak: #4a3722;
+  --color-oak-dark: #241a10;
+
   --font-sans: var(--font-body), ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-display: var(--font-display), "Times New Roman", Georgia, serif;
@@ -115,6 +119,31 @@
     position: absolute;
     inset: 5px;
     border: 1px solid color-mix(in srgb, var(--color-gold) 14%, transparent);
+    pointer-events: none;
+  }
+
+  /* The lounge's slatted oak wall, abstracted: warm battens with a dark
+     groove between them. Sits over the dark ground rather than replacing it. */
+  .bg-slats {
+    background-color: var(--color-oak-dark);
+    background-image: repeating-linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.55) 0px,
+      rgba(0, 0, 0, 0.5) 2px,
+      rgba(214, 168, 104, 0.34) 3.5px,
+      rgba(214, 168, 104, 0.22) 8px,
+      rgba(214, 168, 104, 0.1) 13px,
+      rgba(0, 0, 0, 0.5) 16px
+    );
+  }
+
+  /* The cream wainscot panelling in the TV room, as an inset double line. */
+  .panel-moulding::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border: 1px solid color-mix(in srgb, var(--color-cream) 8%, transparent);
+    border-radius: calc(var(--radius-card) - 6px);
     pointer-events: none;
   }
 

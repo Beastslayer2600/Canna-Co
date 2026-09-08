@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { LoungeGallery } from "@/components/lounge-gallery";
+import { GalleryWall } from "@/components/gallery-wall";
 import { PageHero } from "@/components/page-hero";
 import { ButtonLink } from "@/components/ui/button";
 import { Ornament, Plate } from "@/components/ui/botanical";
@@ -76,13 +76,18 @@ export default function LoungePage() {
 
       <Section>
         <SectionHeading
-          eyebrow="Have a look"
+          eyebrow="The wall"
           title="Two ends, one room."
-          lead="Art and a sofa at one end, a big screen and chairs you disappear into at the other."
+          lead="Slatted oak, a flock of birds mid-flight, and two ledges of framed prints. Art and a sofa at one end; a big screen and chairs you disappear into at the other."
         />
         <div className="mt-14">
-          <LoungeGallery />
+          <GalleryWall />
         </div>
+        <p className="mt-6 max-w-2xl text-sm leading-relaxed text-muted">
+          Mona Lisa is up there twice, and she is not behaving herself either
+          time. Come and see the rest properly — it doesn&rsquo;t photograph
+          the way it looks.
+        </p>
       </Section>
 
       <Section className="border-y border-line bg-ink-soft">
@@ -149,7 +154,7 @@ export default function LoungePage() {
       </Section>
 
       <Section className="border-t border-line bg-ink-soft">
-        <Plate className="px-8 py-14 text-center sm:px-14">
+        <Plate className="panel-moulding px-8 py-16 text-center sm:px-14">
           <p className="font-script text-4xl text-gold sm:text-5xl">
             Roll. Connect. Adventure.
           </p>

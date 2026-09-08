@@ -71,11 +71,10 @@ Also worth doing before launch:
    business in a particular voice and make claims about how it operates
    (parking, accessibility, sign-up taking ten minutes). Correct anything that
    isn't true.
-3. **More photography.** The Lounge page has two real photos of the room; the
-   rest of the site is still purely typographic. The poster artwork would work
-   well on the Specials page, and a shot of the shop floor would carry the
-   Store page. Source images live in `src/images/` (imported, so Next generates
-   sizes and blur placeholders) rather than `public/`.
+3. **Photography, if you ever want it.** The site is deliberately
+   photograph-free — the lounge is evoked in CSS rather than shown. If that
+   changes, put source images in `src/images/` and import them so Next
+   generates sizes and blur placeholders; don't drop them in `public/`.
 4. **Add a favicon and OG image.** `src/app/favicon.ico` is still the Next.js
    default, and there's no Open Graph image yet, so link previews will be
    text-only. One of the posters would make a good OG image.
@@ -105,7 +104,7 @@ src/
     globals.css       Tailwind theme — colours, fonts, base styles
   components/
     age-gate.tsx      19+ confirmation, remembered per browser
-    lounge-gallery.tsx  the two lounge photos, with captions
+    gallery-wall.tsx  the lounge's art wall, drawn in CSS
     open-now.tsx      live open/closed badge, on the shop's clock
     todays-special.tsx  "on today" pill for whichever special is running
     utility-bar.tsx   thin strip above the header: status + phone
@@ -114,7 +113,7 @@ src/
     contact-form.tsx  composes a mailto:/WhatsApp message; sends nothing itself
     page-hero.tsx     shared inner-page hero
     ui/               buttons, cards, sections, icons, poster-title,
-                      botanical (leaf art + ornaments), marquee
+                      botanical (leaf art + ornaments), birds, marquee
   lib/
     hours.ts          open/closed + today's special, in Africa/Johannesburg
     site.ts           ⚠️ all business details live here
@@ -127,6 +126,12 @@ src/
 **The age gate** blocks the page until a visitor confirms they're 18+, and
 remembers the answer in `localStorage`. It's a deterrent, not real
 verification — actual age checking happens at the door.
+
+**No photographs anywhere on the site.** The lounge's slatted oak wall, its
+flock of birds and its two picture ledges are drawn in CSS and SVG
+(`gallery-wall.tsx`, `birds.tsx`, and the `bg-slats` / `panel-moulding`
+utilities in `globals.css`). Real photos of the room were the reference, not
+the content.
 
 **The lounge is behind the closet**, and the site says so on the Lounge page,
 the home page, the About page and in the FAQ. If that's meant to stay a

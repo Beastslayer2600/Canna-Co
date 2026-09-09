@@ -4,6 +4,7 @@ import { Cinzel, Inter, Yellowtail } from "next/font/google";
 import { AgeGate } from "@/components/age-gate";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { StickyActions } from "@/components/sticky-actions";
 import { UtilityBar } from "@/components/utility-bar";
 import { site } from "@/lib/site";
 import "./globals.css";
@@ -121,6 +122,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           {children}
         </main>
         <SiteFooter />
+        <StickyActions />
       </body>
     </html>
   );

@@ -23,8 +23,12 @@ export const site = {
   description:
     "Canna & Co is a members-only cannabis club, boutique store and lounge in Moreleta Park, Pretoria. Weekly specials, an edible bar, game nights, and honest guidance from people who know the plant.",
 
-  /** Used for canonical URLs, sitemap and Open Graph tags. */
-  url: "https://cannaco.co.za",
+  /**
+   * Used for canonical URLs, sitemap and Open Graph tags.
+   * ⚠️ PLACEHOLDER, and not just a cosmetic one: cannaco.co.za is a live,
+   * unrelated company. Register the real domain before launch.
+   */
+  url: "https://cannaandco.co.za",
 
   /**
    * ⚠️ Every poster reads "19+ ONLY", so the site follows the brand's own
@@ -39,7 +43,7 @@ export const site = {
     phoneHref: "tel:+27120000000",
     // PLACEHOLDER — replace with the real WhatsApp number (digits only, country code first).
     whatsapp: "27600000000",
-    email: "hello@cannaco.co.za",
+    email: "hello@cannaandco.co.za",
   },
 
   address: {
@@ -104,13 +108,19 @@ export function whatsappLink(message: string) {
   return `https://wa.me/${site.contact.whatsapp}?text=${encodeURIComponent(message)}`;
 }
 
+/** Header navigation. The logo handles "home", so it isn't listed here. */
 export const nav = [
-  { href: "/", label: "Home" },
   { href: "/specials", label: "Specials" },
-  { href: "/club", label: "The Club" },
   { href: "/store", label: "The Store" },
+  { href: "/club", label: "The Club" },
   { href: "/lounge", label: "The Lounge" },
-  { href: "/about", label: "About" },
   { href: "/visit", label: "Visit" },
   { href: "/faq", label: "FAQ" },
+] as const;
+
+/** Everything else, listed in the footer. */
+export const footerNav = [
+  ...nav,
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ] as const;

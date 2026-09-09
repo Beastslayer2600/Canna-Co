@@ -8,7 +8,7 @@ import {
   PhoneIcon,
   PinIcon,
 } from "./ui/icons";
-import { formattedAddress, mapsSearchUrl, nav, site } from "@/lib/site";
+import { footerNav, formattedAddress, mapsSearchUrl, site } from "@/lib/site";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -52,7 +52,7 @@ export function SiteFooter() {
               Explore
             </h2>
             <ul className="mt-5 space-y-3 text-sm">
-              {nav.map((item) => (
+              {footerNav.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
@@ -62,14 +62,6 @@ export function SiteFooter() {
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-cream-dim transition-colors hover:text-cream"
-                >
-                  Contact
-                </Link>
-              </li>
             </ul>
           </div>
 

@@ -95,8 +95,8 @@ function Hero() {
               See this week&rsquo;s specials
               <ArrowIcon className="size-4" />
             </ButtonLink>
-            <ButtonLink href="/club" variant="secondary">
-              Join the club
+            <ButtonLink href="/visit" variant="secondary">
+              Find us &amp; opening hours
             </ButtonLink>
           </div>
 

@@ -34,6 +34,17 @@ npm start       # serve the production build
 npm run lint    # eslint
 ```
 
+## Before you demo it
+
+Run this first — it fails if any placeholder business detail is still in place:
+
+```bash
+npm run check:details
+```
+
+The phone number alone shows in the top bar, the footer, the Visit page and the
+Contact page, so a demo with placeholders still in is a demo of a template.
+
 ## ⚠️ Before this goes live
 
 The business details in **`src/lib/site.ts`** are placeholders. Replace them with
@@ -45,7 +56,10 @@ page, sitemap and the Schema.org record Google reads:
 - `contact.email`
 - `address` — the real street address
 - `socials` — real profile URLs, or delete the entries
-- `url` — the live domain, used for canonical URLs and the sitemap
+- `url` — the live domain, used for canonical URLs and the sitemap.
+  **This one matters more than it looks:** `cannaco.co.za` is a live,
+  unrelated company, so it must never be used here. The placeholder is now
+  `cannaandco.co.za` — confirm and register the real one.
 
 The **opening hours are real** (spring schedule: 08:00–20:00 Mon–Thu,
 08:00–21:00 Fri & Sat, 08:00–18:00 Sun, public holidays on regular hours). When
@@ -75,9 +89,10 @@ Also worth doing before launch:
    photograph-free — the lounge is evoked in CSS rather than shown. If that
    changes, put source images in `src/images/` and import them so Next
    generates sizes and blur placeholders; don't drop them in `public/`.
-4. **Add a favicon and OG image.** `src/app/favicon.ico` is still the Next.js
-   default, and there's no Open Graph image yet, so link previews will be
-   text-only. One of the posters would make a good OG image.
+4. **Check the link preview.** `src/app/opengraph-image.tsx` generates the
+   1200×630 card that appears when the site is shared on WhatsApp, and
+   `src/app/icon.tsx` generates the tab icon. Both are built from the brand
+   lockup, so they update automatically if `site.ts` changes.
 5. **Confirm the game-night details.** The Lounge page describes D&D nights from
    the poster (D&D Beyond, a level 8 character, bring dice) but deliberately
    gives no date or time — the poster's "17:37" looked like a placeholder. If
@@ -101,6 +116,8 @@ src/
     legal/            terms, age policy, privacy
     sitemap.ts        generated sitemap.xml
     robots.ts         generated robots.txt
+    icon.tsx          generated favicon
+    opengraph-image.tsx  generated link-preview card
     globals.css       Tailwind theme — colours, fonts, base styles
   components/
     age-gate.tsx      19+ confirmation, remembered per browser
@@ -108,6 +125,7 @@ src/
     open-now.tsx      live open/closed badge, on the shop's clock
     todays-special.tsx  "on today" pill for whichever special is running
     utility-bar.tsx   thin strip above the header: status + phone
+    sticky-actions.tsx  mobile bottom bar: directions, WhatsApp, call
     site-header.tsx   sticky header + mobile menu
     site-footer.tsx
     contact-form.tsx  composes a mailto:/WhatsApp message; sends nothing itself

@@ -46,12 +46,9 @@ export function SiteHeader() {
         <div className="flex h-20 items-center justify-between gap-6">
           <Logo strap={site.strap} className="items-start" />
 
-          <nav aria-label="Main" className="hidden items-center gap-1 xl:flex">
+          <nav aria-label="Main" className="hidden items-center gap-1 lg:flex">
             {nav.map((item) => {
-              const active =
-                item.href === "/"
-                  ? pathname === "/"
-                  : pathname.startsWith(item.href);
+              const active = pathname.startsWith(item.href);
               return (
                 <Link
                   key={item.href}
@@ -83,7 +80,7 @@ export function SiteHeader() {
               aria-expanded={open}
               aria-controls="mobile-nav"
               aria-label={open ? "Close menu" : "Open menu"}
-              className="flex size-11 items-center justify-center rounded-full border border-line text-cream xl:hidden"
+              className="flex size-11 items-center justify-center rounded-full border border-line text-cream lg:hidden"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -112,7 +109,7 @@ export function SiteHeader() {
       </Container>
 
       {open ? (
-        <div id="mobile-nav" className="border-t border-line bg-ink xl:hidden">
+        <div id="mobile-nav" className="border-t border-line bg-ink lg:hidden">
           <Container>
             <nav aria-label="Mobile" className="flex flex-col py-4">
               {nav.map((item) => (
